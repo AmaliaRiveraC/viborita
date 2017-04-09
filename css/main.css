@@ -3,13 +3,13 @@ h1 {
     }
 
 #vibora {
-        width:20px;
-        height: 20px;
+        width:50px;
+        height: 50px;
         background-color: blue;
 }
 #contenedor{
-        margin-right:500px;
-        margin-left:500px;
+        margin-right:auto;
+        margin-left:auto;
         border: solid 1px;
         border-color: black;
         background:yellow;
