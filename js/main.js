@@ -1,36 +1,62 @@
-var contenedor = document.getElementById("contenedor");
+document.addEventListener("keydown", avanzar);
 var vibora = document.getElementById("vibora");
 var posY = 0;
 var posX = 0;
-var movimiento = 20;
+var movimiento = 21;
 
-var teclas = {
-    left: 37,
-    right: 30,
-    up: 38,
-    down: 39
-};
 
-vibora.addEventListener("keydown", avanzar);
 
-function avanzar(evento.keyCode){
-    switch(teclas)={
-        case left:
-            
+function avanzar(evento){
+
+    switch(evento.keyCode) {
+        case 38: //Arriba
+        posY -= movimiento;
+        if(posY < 0) {
+            juegoAcabado();
+        } else {
+            vibora.style.marginTop = posY + "px";
+        }
             break;
-        case right:
+
+        case 40: //Abajo
+        posY += movimiento;
+        if(posY > 481){
+            juegoAcabado();
+        } else {
+            vibora.style.marginTop = posY + "px";
+        }
             break;
-        case up:
+    
+        case 39: //Derecha
+        posX += movimiento;
+        if(posX > 481) {
+            juegoAcabado();
+        } else {
+            vibora.style.marginLeft = posX + "px";
+        }
+
             break;
-        case down:
+      
+        case 37: //Izquierda
+        posX -= movimiento;
+        if(posX < 0){
+            juegoAcabado();
+        } else {
+            vibora.style.marginLeft = posX + "px";
+        }
+
             break;
+        
         default:
+
+        alert("Tecla no válida, usa las flechas.")
             break;
             
             
                  }
 }
 
-function finDelJuego(){
-    
+function juegoAcabado(){
+    alert("Game over");
+    document.removeEventListener("keydown", avanzar);
 }
