@@ -74,7 +74,7 @@ function reIniciar(event) {
     
     vibora.style.marginTop = 0;
     vibora.style.marginLeft = 0;
-    document.removeEventListener("keydown", avanzar);
+    juegoAcabado();
     document.addEventListener("keydown", avanzar)
     console.log(event);
 }
